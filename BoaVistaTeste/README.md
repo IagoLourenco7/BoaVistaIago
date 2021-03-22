@@ -62,6 +62,49 @@ select tube_assembly_id, sum(cast(quantity as numeric)) as soma
 from boavista.price_quote 
 group by  tube_assembly_id, quote_date;
 
+Criação da view despivotada
+
+CREATE VIEW boavista.vw_bill_of_materials as
+select tube_assembly_id, 
+       component_id_1 as component_id, 
+       quantity_1 as quantity
+from boavista.bill_of_materials
+union all
+select tube_assembly_id, 
+       component_id_2 as component_id, 
+       quantity_2 as quantity
+from boavista.bill_of_materials
+union all 
+select tube_assembly_id, 
+       component_id_3 as component_id, 
+       quantity_3 as quantity
+from boavista.bill_of_materials
+union all 
+select tube_assembly_id, 
+       component_id_4 as component_id, 
+       quantity_4 as quantity
+from boavista.bill_of_materials
+union all
+select tube_assembly_id, 
+       component_id_5 as component_id, 
+       quantity_5 as quantity
+from boavista.bill_of_materials
+union all 
+select tube_assembly_id, 
+       component_id_6 as component_id, 
+       quantity_6 as quantity
+from boavista.bill_of_materials
+union all 
+select tube_assembly_id, 
+       component_id_7 as component_id, 
+       quantity_7 as quantity
+from boavista.bill_of_materials
+union all 
+select tube_assembly_id, 
+       component_id_8 as component_id, 
+       quantity_8 as quantity
+from boavista.bill_of_materials;
+
 
 Retornando a soma de tubos montados por tipo conforme o id
 Segue link de amostra:

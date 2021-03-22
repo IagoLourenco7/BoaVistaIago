@@ -5,7 +5,7 @@ Foram criados 3 jobs no Dataproc para a execução das ingestões dos arquivos d
 Script de criação:
 gcloud beta dataproc clusters create boavista_teste_engDados\
  --region southamerica-east1 \
- --zone us-central1-b \
+ --zone southamerica-east1-b \
  --single-node\
  --master-machine-type\
  n1-standard-4\

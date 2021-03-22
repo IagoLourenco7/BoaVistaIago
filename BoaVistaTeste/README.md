@@ -62,7 +62,7 @@ select tube_assembly_id, sum(cast(quantity as numeric)) as soma
 from boavista.price_quote 
 group by  tube_assembly_id, quote_date;
 
-Criação da view despivotada
+Criação da view despivotada caso não seja executada o segundo processo do script bill_of_materials
 
 CREATE VIEW boavista.vw_bill_of_materials as
 select tube_assembly_id, 
